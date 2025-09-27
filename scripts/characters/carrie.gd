@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 var current_dir: String = "none"
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move ()
 	animate()
 
@@ -17,7 +17,7 @@ func move () -> void:
 	move_and_slide ()
 
 func animate () -> void:
-	if velocity.x > 0 or velocity.y > 0:
+	if velocity.x != 0 or velocity.y != 0:
 		if Input.is_action_just_pressed("ui_left"):
 			current_dir = "left"
 			animation.play("walkSIDE")
