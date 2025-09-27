@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqelbkdwfo5v6"]
+
+[ext_resource type="Texture2D" uid="uid://c3f61lly366pf" path="res://assets/backgrounds/background.png" id="1_e6yxx"]
+[ext_resource type="PackedScene" uid="uid://bea6glkb6gw8i" path="res://scenes/characters/carrie.tscn" id="2_eqihu"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_e6yxx")
+
+[node name="Carrie" parent="." instance=ExtResource("2_eqihu")]
+position = Vector2(32, 33)
+SPEED = 100.0
