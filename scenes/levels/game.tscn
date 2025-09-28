@@ -9,5 +9,4 @@
 texture = ExtResource("1_e6yxx")
 
 [node name="Carrie" parent="." instance=ExtResource("2_eqihu")]
-position = Vector2(32, 33)
-SPEED = 100.0
+position = Vector2(-4, 0)
