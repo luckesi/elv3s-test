@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3ken32fyx5va"]
+[gd_scene load_steps=4 format=3 uid="uid://d3ken32fyx5va"]
 
 [ext_resource type="Texture2D" uid="uid://3jox67j48qep" path="res://assets/objects/obj_barrel01.png" id="1_adoy6"]
+[ext_resource type="Script" uid="uid://dyker2s7tx5ix" path="res://scripts/objects/barril.gd" id="1_c5ogq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adoy6"]
 size = Vector2(15, 19)
 
-[node name="Barril" type="RigidBody2D"]
+[node name="Barril" type="CharacterBody2D"]
+script = ExtResource("1_c5ogq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_adoy6")

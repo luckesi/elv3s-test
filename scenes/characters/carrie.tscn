@@ -137,7 +137,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2cx1"]
-size = Vector2(12, 18)
+size = Vector2(12, 15)
 
 [node name="Carrie" type="CharacterBody2D"]
 script = ExtResource("1_5cmg4")
@@ -153,6 +153,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_t2cx1")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -3,7 +3,9 @@ extends CharacterBody2D
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var texture: Sprite2D = $Texture
 @export_category("Player Stats")
-@export var SPEED: float = 150
+@export var SPEED: float = 110
+var push_force: float = 0.75
+var is_pushing: bool = false
 
 #Variável da direção
 var current_dir: String = "none"
@@ -12,12 +14,33 @@ var current_dir: String = "none"
 func _physics_process(_delta: float) -> void:
 	move ()
 	animate()
+	is_pushing = false
 
 #Função de movimento
 func move () -> void: 
 	var direction: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = direction * SPEED
+	_push_objects()
 	move_and_slide ()
+
+#Função da empurrada
+func _push_objects():
+	var lastCollision = get_last_slide_collision()
+
+	if lastCollision:
+		var collider = lastCollision.get_collider()
+
+		if "Barril" in collider.name:
+			var pushDirection = (collider.global_position - global_position).normalized()
+
+			var pushOnSide = abs(pushDirection.y) < 0.5
+			
+			var pushOnTop = abs(pushDirection.x) < 0.5
+
+			if pushOnTop or pushOnSide:
+				is_pushing = true
+				var pushVelocity = Vector2(push_force * pushDirection)
+				collider.velocity += pushVelocity
 
 #Função das animações
 func animate () -> void:
