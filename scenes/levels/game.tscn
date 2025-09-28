@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqelbkdwfo5v6"]
+[gd_scene load_steps=4 format=3 uid="uid://cqelbkdwfo5v6"]
 
 [ext_resource type="Texture2D" uid="uid://c3f61lly366pf" path="res://assets/backgrounds/background.png" id="1_e6yxx"]
 [ext_resource type="PackedScene" uid="uid://bea6glkb6gw8i" path="res://scenes/characters/carrie.tscn" id="2_eqihu"]
+[ext_resource type="PackedScene" uid="uid://d3ken32fyx5va" path="res://scenes/objects/barril.tscn" id="3_61jgc"]
 
 [node name="Game" type="Node2D"]
 
@@ -10,3 +11,10 @@ texture = ExtResource("1_e6yxx")
 
 [node name="Carrie" parent="." instance=ExtResource("2_eqihu")]
 position = Vector2(-4, 0)
+collision_layer = 2
+
+[node name="Barril" parent="." instance=ExtResource("3_61jgc")]
+position = Vector2(-82, -17)
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
