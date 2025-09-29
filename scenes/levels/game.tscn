@@ -1,22 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqelbkdwfo5v6"]
+[gd_scene load_steps=3 format=3 uid="uid://cqelbkdwfo5v6"]
 
 [ext_resource type="Texture2D" uid="uid://c3f61lly366pf" path="res://assets/backgrounds/background.png" id="1_e6yxx"]
-[ext_resource type="PackedScene" uid="uid://bea6glkb6gw8i" path="res://scenes/characters/carrie.tscn" id="2_eqihu"]
 [ext_resource type="PackedScene" uid="uid://d3ken32fyx5va" path="res://scenes/objects/barril.tscn" id="3_61jgc"]
 
 [node name="Game" type="Node2D"]
+z_index = -1
 
 [node name="Background" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background"]
+light_mask = 7
+visibility_layer = 7
 polygon = PackedVector2Array(-320, -55, -171, -55, -171, -25, -68, -25, -68, -55, 320, -55, 320, 66, -55, 66, -55, -5, -176, -5, -176, 66, -320, 66, -320, -55, -465, 56, -390, 256, 0, 342, 467, 181, 469, -193, 295, -203, -337, -198, -437, -119)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 texture = ExtResource("1_e6yxx")
 
-[node name="Carrie" parent="." instance=ExtResource("2_eqihu")]
-position = Vector2(-4, 0)
-collision_layer = 2
-
 [node name="Barril" parent="." instance=ExtResource("3_61jgc")]
-position = Vector2(-9, -32)
+position = Vector2(-14, -26)

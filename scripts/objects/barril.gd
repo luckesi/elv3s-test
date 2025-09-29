@@ -1,12 +1,18 @@
 extends CharacterBody2D
+
+var object_weight:float = 80 # pra mudar a velocidade de empurrar de acordo com o peso do objeto
+
 func _pyshics_process(_delta: float) -> void:
-	if velocity.x:
-		velocity.x *= 0.995
+	pass
 
-	if velocity.y:
-		velocity.y *= 0.995
 
-	if velocity.y and velocity.x:
-		velocity.x *= 0.995
-		velocity.x *= 0.995
+func _on_hitbox_area_2d_area_entered(area: Area2D) -> void:
+	print("OBJECTO HITBOX: ",area)
+
+
+func _on_hitbox_area_2d_area_exited(_area: Area2D) -> void:
+	velocity = Vector2.ZERO
+
+func on_push(push_force: int):
+	velocity = (MainCharacter.velocity * push_force )
 	move_and_slide()

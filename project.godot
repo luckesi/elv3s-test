@@ -14,6 +14,14 @@ config/name="elv3stest"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MainCharacter="*res://scenes/characters/carrie.tscn"
+
+[global_group]
+
+pushables_objects=""
+
 [input]
 
 ui_left={

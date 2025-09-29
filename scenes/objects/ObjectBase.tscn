@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyl7puclxe2qq"]
+
+[ext_resource type="Script" uid="uid://yxtone7227ow" path="res://scripts/objects/object_base.gd" id="1_3kb4a"]
+[ext_resource type="Texture2D" uid="uid://3jox67j48qep" path="res://assets/objects/obj_barrel01.png" id="1_xk5oq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xk5oq"]
+radius = 6.0
+height = 18.0
+
+[node name="ObjectBase" type="Area2D"]
+script = ExtResource("1_3kb4a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xk5oq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_xk5oq")
+
+[node name="RightRay" type="RayCast2D" parent="."]
+rotation = 1.5707964
+target_position = Vector2(-4.371139e-07, 10)
+
+[node name="LeftRay" type="RayCast2D" parent="."]
+rotation = -1.5707964
+target_position = Vector2(-4.371139e-07, 10)
+
+[node name="UpRay" type="RayCast2D" parent="."]
+rotation = -3.1415925
+target_position = Vector2(9.616506e-07, 11)
+
+[node name="DownRay" type="RayCast2D" parent="."]
+target_position = Vector2(3.0994415e-06, 13)
